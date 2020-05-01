@@ -26,8 +26,10 @@
                 <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorLevel,
                     AncestorType={x:Type local:CoinControl}}}"/>
             </Border>
-            <Button Grid.Row="1" Grid.Column="0">-</Button>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource=}"
+            <Button Grid.Row="1" Grid.Column="0" Click="OnDecreseClick">-</Button>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor,
+                AncestorType={x:Type local:CoinControl}}, Path=Quantity}"/>
+            <Button Grid.Row="1" Grid.Column="2" Click="OnIncreseClick">+</Button> 
         </Grid>
     </Border>
 </UserControl>
