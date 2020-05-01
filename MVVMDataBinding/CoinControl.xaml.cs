@@ -28,15 +28,23 @@ namespace MVVMDataBinding
         /// </summary>
         public Coins Denomination
         {
-            get { return (Coins)GetValue(DenominationProperty); }
-            set { SetValue(DenominationProperty, value); }
+            get =>(Coins)GetValue(DenominationProperty); 
+            set => SetValue(DenominationProperty, value); 
         }
 
-        public static readonly DependencyProperty Quantity =
-            DependencyProperty.Register("Quantity", typeof(int), typeof(CoinControl),
-                new PropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
+        public static readonly DependencyProperty QuantityProperty =
+            DependencyProperty.Register(
+                "Quantity", 
+                typeof(int), 
+                typeof(CoinControl),
+                new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
                 );
 
+        public int Quantity
+        {
+            get => (int)GetValue(QuantityProperty);
+            set => SetValue(QuantityProperty, value);
+        }
 
         public CoinControl()
         {
