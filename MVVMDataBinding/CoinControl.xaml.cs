@@ -50,5 +50,15 @@ namespace MVVMDataBinding
         {
             InitializeComponent();
         }
+
+        private void OnDecreaseClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnIncreaseClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
