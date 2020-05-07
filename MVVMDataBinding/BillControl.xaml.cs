@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CashRegister;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,36 +11,35 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CashRegister;
 
 namespace MVVMDataBinding
 {
     /// <summary>
-    /// Interaction logic for CoinControl.xaml
+    /// Interaction logic for BillControl.xaml
     /// </summary>
-    public partial class CoinControl : UserControl
+    public partial class BillControl : UserControl
     {
         public static readonly DependencyProperty DenominationProperty =
             DependencyProperty.Register(
-                "Denomination", 
-                typeof(Coins), 
-                typeof(CoinControl), 
-                new PropertyMetadata(Coins.Penny));
+                "Denomination",
+                typeof(Bills),
+                typeof(BillControl),
+                new PropertyMetadata(Bills.One));
 
         /// <summary>
         /// The denomination of the coin being modified
         /// </summary>
-        public Coins Denomination
+        public Bills Denomination
         {
-            get =>(Coins)GetValue(DenominationProperty); 
-            set => SetValue(DenominationProperty, value); 
+            get => (Bills)GetValue(DenominationProperty);
+            set => SetValue(DenominationProperty, value);
         }
 
         public static readonly DependencyProperty QuantityProperty =
             DependencyProperty.Register(
-                "Quantity", 
-                typeof(int), 
-                typeof(CoinControl),
+                "Quantity",
+                typeof(int),
+                typeof(BillControl),
                 new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
                 );
 
@@ -49,7 +49,7 @@ namespace MVVMDataBinding
             set => SetValue(QuantityProperty, value);
         }
 
-        public CoinControl()
+        public BillControl()
         {
             InitializeComponent();
         }
