@@ -23,11 +23,13 @@
 
             <Border Grid.Column="1" BorderBrush="Goldenrod" BorderThickness="1"
                     CornerRadius="50" Background="Gold" Margin="-8, 0">
-                <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor,
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Text="{Binding RelativeSource={RelativeSource FindAncestor,
                     AncestorType={x:Type local:CoinControl}}}"/>
             </Border>
             <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClick">-</Button>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{
+            <TextBlock Grid.Row="1" Grid.Column="1" TextAlignment="Center"
+                VerticalAlignment="Center" Text="{
                 Binding RelativeSource={RelativeSource FindAncestor,
                 AncestorType={x:Type local:CoinControl}}, Path=Quantity}"/>
             <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClick">+</Button> 

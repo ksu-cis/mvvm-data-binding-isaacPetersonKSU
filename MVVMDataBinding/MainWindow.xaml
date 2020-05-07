@@ -7,11 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <local:BillControl/>
-        <local:CoinControl Grid.Column="1"/>
+        <local:CashRegisterControl>
+            <local:CashRegisterControl.DataContext>
+                <local:CashRegisterModelView/>
+            </local:CashRegisterControl.DataContext>
+        </local:CashRegisterControl>
     </Grid>
 </Window>
